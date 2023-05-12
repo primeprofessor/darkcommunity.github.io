@@ -1,0 +1,1133 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8">
+        <title>LeakCheck - Find out if your credentials have been compromised</title>
+        <link rel="stylesheet" href="css/main.min.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="LeakCheck">
+        <meta name="description" content="Data breach search engine, low price starting from $2.99/day, one free email address, unlimited API, 7B+ records">
+        <meta name="csrf-token" content="jPiyD9NVspElqRbdOayDlsK0vBMXTfZ37y8WfEKU">
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/jquery.fancybox.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/iziModal.css">
+        <link rel="stylesheet" href="css/bootstrap-notify.min.css">
+        <link rel="stylesheet" href="css/alert-bangtidy.min.css">
+        <link rel="stylesheet" href="css/alert-blackgloss.min.css">
+        <link rel="stylesheet" href="css/all.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/toastr.min.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
+
+                <script src="https://hcaptcha.com/1/api.js?" async defer></script>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+
+        <link rel="alternate" hreflang="x-default" href="https://leakcheck.io">
+        <link rel="alternate" hreflang="ru" href="https://leakcheck.io/ru">
+        <link rel="alternate" hreflang="en" href="https://leakcheck.io/en">
+        <meta name="enot" content="78816486452602NN1OZSUJXS5fEqDPciN15defgjHRMtU">
+    </head>
+    <body>
+        <div class="scrollbar" id="style-1">
+            <div class="force-overflow"></div>
+        </div>
+        <main>
+            <div class="hamburger d-block d-lg-none">
+                <svg class="ham hamRotate hamb" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+                    <path class="line top" d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013"/>
+                    <path class="line middle" d="m 70,50 h -40"/>
+                    <path class="line bottom" d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40"/>
+                </svg>
+            </div>
+            <header>
+                <nav class="header-wrapper container">
+                    <a href="/" class="logotype-link"><img src="images/logo.png" alt><b>LEAK<span class="lightblue--style">CHECK</span></b></a>
+                    <ul class="page-navigation">
+                        <li class="navigation-item active"><a href="#">Home</a></li>
+                        <li class="navigation-item"><a href="#tariffs">Plans</a></li>
+                        <li class="navigation-item"><a href="#advantages">Features</a></li>
+                        <li class="navigation-item"><a target="_blank" href="#" data-toggle="modal" data-target="#databasesModal">Databases</a></li>
+                        <li class="navigation-item"><a target="_blank" href="https://wiki.leakcheck.io/en/api">API</a></li>
+                        <li class="navigation-item"><a target="_blank" href="https://wiki.leakcheck.io/en/faq">FAQ</a></li>
+                        <li class="navigation-item"><a target="_blank" href="https://wiki.leakcheck.io/en/tos">Terms of Service</a></li>
+                    </ul>
+                    <div class="dropdown choose-language">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="images/en.png" alt class="flag">
+                        </button>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/ru"><img src="images/ru.png" alt class="flag"><span>Русский</span></a>
+                            <a class="dropdown-item" href="/en"><img src="images/en.png" alt class="flag"><span>English</span></a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <section class="home-section container">
+                <div class="home-content">
+                    <div class="home-description">
+                        <h1 class="main-title col-md-9">Sign up for free and make sure your credentials haven't been compromised</h1>
+                        <h2>Protecting the digital identity of people and companies for 4 years.</h2>
+                    </div>
+                    <form name="search" class="d-flex justify-content-center text-center" method="POST">
+                        <div class="col col-md-7" style="margin-bottom:2.5em;">
+                            <div class="input-group mb-3">
+                              <input type="text" name="data" class="form-control" placeholder="E-mail or username" aria-label="E-mail or username" aria-describedby="button-search" required>
+                              <button class="btn btn-outline-secondary" type="submit" id="button-search">Search</button>
+                            </div>
+                            <span style="color:white;"><i class="fas fa-check-circle" style="color: #3ab8ff"></i> We do not keep logs of your searches. Data is transferred using the TLS protocol and cannot be intercepted.</span>
+                        </div>
+                    </form>
+                    <div class="buttons-group">
+                        <button class="button registration-button big-btn btn--purple" data-toggle="modal" data-target="#registrationModal">Register<i class="fas fa-long-arrow-alt-right"></i></button>
+                        <button class="button login-button big-btn" data-toggle="modal" data-target="#loginModal">Sign in<i class="fas fa-door-open"></i></button>
+                    </div>
+                </div>
+                <div class="tarifs-section" id="tariffs">
+                    <h2 class="section-title">Plans</h2>
+                    <div class="tarifs-wrapper">
+                        <article class="tarif tarif-basic">
+                            <div class="tarif-flag"></div>
+                            <div class="tarif-wrapper">
+                                <div class="tarif-header">
+                                    <h3 class="tarif-title">
+                                        <img src="fonts/lock.svg" alt class="icon">
+                                        <span>Basic Plan</span>
+                                    </h3>
+                                </div>
+                                <div class="tarif-body">
+                                    <h4 class="tarif-price"><span>2.99<font size="2px">$</font></span> / day</h4>
+                                    <ul class="tarif-list">
+                                        <li>15 e-mail lookups</li>
+                                    </ul>
+                                </div>
+                                <div class="tarif-footer">
+                                    <button class="button btn--purple" data-toggle="modal" data-target="#registrationModal">Choose this<i class="fas fa-long-arrow-alt-right"></i></button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tarif tarif-basic">
+                            <div class="tarif-flag"></div>
+                            <div class="tarif-wrapper">
+                                <div class="tarif-header">
+                                    <h3 class="tarif-title">
+                                        <img src="fonts/bucket.svg" alt class="icon">
+                                        <span>Monthly Plan</span>
+                                    </h3>
+                                </div>
+                                <div class="tarif-body">
+                                    <h4 class="tarif-price"><span>9.99<font size="2px">$</font></span> / mo</h4>
+                                    <ul class="tarif-list">
+                                        <li class="option-day">200 e-mails, usernames <font size="1px" color="#969696">/ day</font></li>
+                                        <hr>
+                                        <li class="option-day">15 keywords <font size="1px" color="#969696">/ day</font></li>
+                                    </ul>
+                                </div>
+                                <div class="tarif-footer">
+                                    <button class="button btn--purple" data-toggle="modal" data-target="#registrationModal">Choose this<i class="fas fa-long-arrow-alt-right"></i></button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tarif tarif-special">
+                            <div class="tarif-flag">Recommended</div>
+                            <div class="tarif-wrapper">
+                                <div class="tarif-header">
+                                    <h3 class="tarif-title">
+                                        <img src="fonts/ghost.svg" alt class="icon">
+                                        <span>Lifetime Plan</span>
+                                    </h3>
+                                </div>
+                                <div class="tarif-body">
+                                    <h4 class="tarif-price"><span>24.99<font size="2px">$</font></span> / lifetime</h4>
+                                    <ul class="tarif-list">
+                                        <li class="option-day">400 e-mails, usernames <font size="1px" color="#969696">/ day</font></li>
+                                        <hr>
+                                        <li class="option-day">30 keywords <font size="1px" color="#969696">/ day</font></li>
+                                    </ul>
+                                </div>
+                                <div class="tarif-footer">
+                                    <button class="button btn--purple" data-toggle="modal" data-target="#registrationModal">Choose this<i class="fas fa-long-arrow-alt-right"></i></button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tarif tarif-special">
+                            <div class="tarif-flag">Best Plan</div>
+                            <div class="tarif-wrapper">
+                                <div class="tarif-header">
+                                    <h3 class="tarif-title">
+                                        <img src="fonts/settings.svg" alt class="icon">
+                                        <span>Enterprise</span>
+                                    </h3>
+                                </div>
+                                <div class="tarif-body">
+                                    <h4 class="tarif-price">from <span>100<font size="2px">$</font></span> / every 3 months</h4>
+                                    <ul class="tarif-list">
+                                        <li><i class="fas fa-infinity"></i> any lookups</li>
+                                        <hr>
+                                        <li>Reverse search by password and company domain</li>
+                                        <hr>
+                                        <li>Bulk check</li>
+                                        <hr>
+                                        <!-- <li><span class="bange badge-pill badge-success">$250/month (incl. plan)</span> Corporate panel</li> -->
+                                        <hr>
+                                        <li><span class="bange badge-pill badge-primary">OPTIONAL</span> Accept recurring payments, provide invoices</li>
+                                        <hr>
+                                        <li><span class="bange badge-pill badge-primary">OPTIONAL</span> Dedicated support, help with development & integration into own projects, corporate environment</li>
+                                    </ul>
+                                </div>
+                                <div class="tarif-footer">
+                                    <button class="button btn--purple" data-toggle="modal" data-target="#registrationModal">Choose this<i class="fas fa-long-arrow-alt-right"></i></button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="advantages-section container" id="advantages">
+                <h2 class="section-title">Our opportunities</h2>
+                <ul class="advantages-list">
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/api.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>API</h3>
+                            <p>Any subscription includes developer access.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/telegram.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>Telegram bot</h3>
+                            <p>Big database right in your pocket.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/loop.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>Instant search</h3>
+                            <p>Make a query and get results in a second.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/database.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>Big database</h3>
+                            <p>You don't need to search the internet for data. We have it all.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/notification.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>New entries notification</h3>
+                            <p>Find out what information is at risk before someone else does.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/checked.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>Bulk check</h3>
+                            <p>Load a list of 100.000 lines and get result for each.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/search.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>Many search options</h3>
+                            <p>Search by e-mail, username, keyword, corporate domain name or password.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/burn-icon.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>Providing services for a long time</h3>
+                            <p>Service has been protecting your data for 4 years.</p>
+                        </div>
+                    </li>
+                    <li class="advantages-item col-12 col-sm-6 col-md-4">
+                        <div class="advantages-header">
+                            <img src="fonts/feedback.svg" alt>
+                        </div>
+                        <div class="advantages-body">
+                            <h3>Trusted by thousands</h3>
+                            <p>Services are used by a large number of people and by global companies.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="cases-section container">
+                <h2 class="section-title">Use Cases</h2>
+                <div class="advantages-list">
+                        <div class="column-items">
+                            <div class="item">
+                                <div class="image-variable">
+                                    <img src="fonts/a.svg" alt>
+                                </div>
+                                <div class="data-variable">
+                                    <h1>Protecting yourself</h1>
+                                    <p>This is the main purpose of LeakCheck. Find out if your data has been compromised as a result of any breach.</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-variable">
+                                    <img src="fonts/b.svg" alt>
+                                </div>
+                                <div class="data-variable">
+                                    <h1>Preventing password reuse</h1>
+                                    <p>According to the results of a survey conducted by Google in 2018, 65% of users on the internet use the same password for most (or even all) of their accounts. With our Enterprise API, you can check whether a password has been used before, even before a user registers on your website.</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-variable">
+                                    <img src="fonts/c.svg" alt>
+                                </div>
+                                <div class="data-variable">
+                                    <h1>Recovering old passwords</h1>
+                                    <p>Sometimes we forget our login details and want to get them back. In some cases, our service can find them for you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-items">
+                            <div class="item">
+                                <div class="image-variable">
+                                    <img src="fonts/d.svg" alt>
+                                </div>
+                                <div class="data-variable">
+                                    <h1>Users monitoring</h1>
+                                    <p>Let us notify you of any compromised passwords of your users and force them to change their passwords before something bad happens.</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-variable">
+                                    <img src="fonts/e.svg" alt>
+                                </div>
+                                <div class="data-variable">
+                                    <h1>Business monitoring</h1>
+                                    <p>When it comes to corporate security, a leaked password from at least one employee can have tragic consequences for the entire company. We offer multiple options for domain monitoring - both manually in your account and automatically using the API or our dedicated solution.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <section class="contacts-section container">
+                <h2 class="section-title">Contacts</h2>
+                <ul class="contacts-list">
+                                        <li class="list-item">
+                        <img src="fonts/discord.svg" alt>
+                        <div class="contacts-body">
+                            <p>Discord Channel</p>
+                            <a href="/discord" target="_blank">
+                            @LeakCheck
+                            </a>
+                        </div>
+                    </li>
+                                        <li class="list-item">
+                        <img src="fonts/tg-link.svg" alt>
+                        <div class="contacts-body">
+                            <p>Support in Telegram</p>
+                            <a href="https://t.me/lc_cs" target="_blank">
+                            @lc_cs
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img src="fonts/mail-link.svg" alt>
+                        <div class="contacts-body">
+                            <p>Email</p>
+                            <a href="mailto:the@leakcheck.net" target="_blank">
+                            the@leakcheck.net
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <footer>
+                <div class="footer-wrapper container" id="footer">
+                    <p class="col-12 col-md-6">
+                        This site is protected by hCaptcha and its <a href="https://hcaptcha.com/privacy"><span class="lightblue--style">Privacy Policy</span></a> and <a href="https://hcaptcha.com/terms"><span class="lightblue--style">Terms of Service</span></a> apply.<br><br>
+                        © 2018-2023 LeakCheck Security Services, Ltd. All rights reserved. Services are provided by registered company with number <a href="https://beta.companieshouse.gov.uk/company/12101959" target="_noblank"><span class="lightblue--style">12101959</span></a> <br> 2 Thomas More St, London, United Kingdom, E1W 1WY
+                        <br><br>
+                        <a href="//www.dmca.com/Protection/Status.aspx?ID=9dd0dcbe-e28c-48e9-9986-e03a259523c6" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=9dd0dcbe-e28c-48e9-9986-e03a259523c6" alt="DMCA.com Protection Status"></a>  <script src="js/DMCABadgeHelper.min.js"> </script>
+                    </p>
+                </div>
+            </footer>
+        </main>
+        <div class="modal fade custom-modal" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Search results</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-info"><b><span id="passwords-found">0</span></b> entries found from <b><span id="leaks-found">0</span></b> known sources <br>Only sources are shown. Register to view detailed information.<br> To remove your data, submit a request to <a href="mailto:removal@leakcheck.net">removal@leakcheck.net</a></div>
+                        <div class="table-responsive">
+                            <table class="table" id="search-table">
+                                <thead>
+                                    <tr>
+                                        <th><i class="fas fa-at"></i> Source</th>
+                                        <th><i class="fas fa-at"></i> Last breach</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade custom-modal" id="databasesModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Databases</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link active" href="#databases" data-toggle="tab">Databases</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#updates" data-toggle="tab">Updates</a>
+	</li>
+</ul>
+<br>
+<div class="tab-content">
+	<div id="databases" class="tab-pane fade show active">
+		<div class="alert alert-info"><i class="fas fa-question-circle"></i> It's possible to get this table as JSON through API. Use <code>&type=databases</code> while sending request.</div>
+		<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> This table provides a list of indexed leaks that appear as a source when you make a search. Some databases may be missing here and display as "unknown" in case we do not have the leak file. We collect data exclusively from public sources.</div>
+		<div class="table-responsive">
+			<table class="table" id="databasesTable" data-order="[[ 2, " asc" ]]">
+				<thead>
+					<tr>
+						<th><i class="fas fa-at"></i> E-mail addresses</th>
+						<th><i class="fas fa-user"></i> usernames</th>
+						<th><i class="fas fa-database"></i> Database</th>
+						<th><i class="fas fa-tags"></i> Tags</th>
+						<th><i class="fas fa-calendar-day"></i> Breach date</th>
+											</tr>
+				</thead>
+			</table>
+		</div>
+		<br><br>
+		<h4><i class="fas fa-tags"></i> Tags</h4>
+		<small>
+			<i class="fas fa-exclamation-circle"></i> Unverified breach / Doesn't seem to be a real leak<br>
+			<i class="fas fa-user-slash"></i> Breach doesn't contain passwords<br>
+			<i class="fas fa-folder-open"></i> Compilation of various leaks as one breach<br>
+		</small>
+	</div>
+	<div id="updates" class="tab-pane fade">
+		<div class="alert alert-info"><i class="fas fa-question-circle"></i> It's possible to get these updates as JSON through API. Use <code>&type=updates</code> while sending request.</div>
+							<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">2023-05-10</h5>
+					<h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-plus"></i> Added new entries: 594.9K</h6>
+					<p class="card-text">
+													</p><li>
+								246 emails
+								
+								from
+								APK.tw
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								719 emails
+								
+								from
+								Chegg.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								141 emails
+								
+								from
+								D3scene.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								199.6K emails, 
+								385.8K usernames
+								from
+								Taringa.net
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								1 emails
+								
+								from
+								Zomato.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								7.9K emails
+								
+								from
+								Shopback.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								19 emails, 
+								25 usernames
+								from
+								IPMart-Forum.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								1 emails
+								
+								from
+								school.mos.ru
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								253 emails, 
+								132 usernames
+								from
+								Exvagos.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+											<p></p>
+				</div>
+			</div><br>
+					<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">2023-05-09</h5>
+					<h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-plus"></i> Added new entries: 3.4M</h6>
+					<p class="card-text">
+													</p><li>
+								4.1K emails, 
+								4.1K usernames
+								from
+								Trackitt.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								48 emails, 
+								44 usernames
+								from
+								Parapa.mail.ru
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								4.8K emails, 
+								5.1K usernames
+								from
+								Duelingnetwork.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								205.9K emails, 
+								3.2M usernames
+								from
+								EyeEm.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+											<p></p>
+				</div>
+			</div><br>
+					<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">2023-05-07</h5>
+					<h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-plus"></i> Added new entries: 93K</h6>
+					<p class="card-text">
+													</p><li>
+								2 emails
+								
+								from
+								school.mos.ru
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								50 emails
+								
+								from
+								Youku.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								11.8K emails
+								
+								from
+								Houzz.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								40K emails, 
+								40.6K usernames
+								from
+								StockX.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								96 emails, 
+								330 usernames
+								from
+								Dailymotion.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+											<p></p>
+				</div>
+			</div><br>
+					<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">2023-05-05</h5>
+					<h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-plus"></i> Added new entries: 6.3K</h6>
+					<p class="card-text">
+													</p><li>
+								5 emails
+								
+								from
+								school.mos.ru
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								6.3K emails
+								
+								from
+								Shopback.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+											<p></p>
+				</div>
+			</div><br>
+					<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">2023-05-03</h5>
+					<h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-plus"></i> Added new entries: 73.3K</h6>
+					<p class="card-text">
+													</p><li>
+								315 emails, 
+								1.2K usernames
+								from
+								Benchmark.rs
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								2.4K emails, 
+								3.2K usernames
+								from
+								Exvagos.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								34 emails, 
+								60 usernames
+								from
+								IPMart-Forum.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								21 emails, 
+								13 usernames
+								from
+								Gsmhosting.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								19.8K emails, 
+								27.7K usernames
+								from
+								Wattpad.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								28 emails, 
+								26 usernames
+								from
+								WiiHacks.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								5.3K emails, 
+								12.9K usernames
+								from
+								Poshmark.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+											<p></p>
+				</div>
+			</div><br>
+					<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">2023-05-01</h5>
+					<h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-plus"></i> Added new entries: 9.2K</h6>
+					<p class="card-text">
+													</p><li>
+								8.2K emails
+								
+								from
+								Avvo.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								147 emails
+								
+								from
+								Sonicbids.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								770 emails
+								
+								from
+								Hjedd.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								
+								1 usernames
+								from
+								Benchmark.rs
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+											<p></p>
+				</div>
+			</div><br>
+					<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">2023-04-29</h5>
+					<h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-plus"></i> Added new entries: 333.2K</h6>
+					<p class="card-text">
+													</p><li>
+								211.5K emails
+								
+								from
+								Houzz.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								726 emails
+								
+								from
+								Homechef.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								5 emails, 
+								5 usernames
+								from
+								Jefit.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								677 emails, 
+								1.1K usernames
+								from
+								IPMart-Forum.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								3 emails
+								
+								from
+								school.mos.ru
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								6.9K emails, 
+								6.9K usernames
+								from
+								Exvagos.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								3 emails, 
+								8 usernames
+								from
+								Benchmark.rs
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+													<li>
+								53.3K emails, 
+								51.8K usernames
+								from
+								EyeEm.com
+
+																<span class="badge badge-primary"><i class="fas fa-external-link-alt"></i> update</span>
+															</li>
+											<p></p>
+				</div>
+			</div><br>
+					</div>
+</div>
+
+<div class="modal fade custom-modal" id="topModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Top 10 passwords <span id="db_name"></span></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<center>
+					<div id="graphError" class="alert alert-warning">No stats for this database</div>
+					<figure class="highcharts-figure">
+					    <div id="container"></div>
+					</figure>
+				</center>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(".nav-tabs a").click(function() {
+			$(this).tab('show');
+		});
+
+		$('#databasesTable').dataTable( {
+			"language": {
+				"url": "/js/en.json"
+			},
+			"ajax": {
+	            "url": "/databases-list",
+	            "type": "GET"
+	        },
+			"columns": [
+				{ "data": "entries.e" },
+				{ "data": "entries.l" },
+				{ "data": "name" },
+				{ "render": function (data, type, row, meta) {
+					tags = "";
+					if(row['unverified'] == 1) {
+						tags += '<i class="fas fa-exclamation-circle" title="Unverified"></i>';
+					}
+					if(row['passwordless'] == 1) {
+						tags += '<i class="fas fa-user-slash" title="Without passwords"></i>';
+					}
+					if(row['compilation'] == 1) {
+						tags += '<i class="fas fa-folder-open" title="Compilation of various leaks"></i>';
+					}
+					return tags;
+				}},
+				{ "data": "breach_date" },
+				        	]
+		});
+	});
+	</script>                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade custom-modal" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="login-with-social">
+                            <h5>Log in via social network</h5>
+                            <ul class="auth-list">
+                                <li><a href="https://leakcheck.io/auth/login/vkontakte" class="vk-link" title="Sign in through VK"><i class="fab fa-vk"></i></a></li>
+                                <!-- <li><a href="#" onclick="social('facebook')" class="fb-link" title="Sign in through Facebook"><i class="fab fa-facebook"></i></a></li> -->
+                                <li><a href="https://leakcheck.io/auth/login/google" class="google-link" title="Sign in through Google"><i class="fab fa-google"></i></a></li>
+                                <li><a href="https://leakcheck.io/auth/login/steam" class="steam-link" title="Sign in through Steam"><i class="fab fa-steam"></i></a></li>
+                                <li><a href="https://leakcheck.io/auth/login/yandex" class="yandex-link" title="Sign in through Yandex"><i class="fab fa-yandex-international"></i></a></li>
+                                <li><a rel="nofollow" href="#" data-dismiss="modal" data-toggle="modal" data-target="#tgModal" class="tg-link" title="Sign in through Telegram"><i class="fab fa-telegram"></i></a></li>
+                            </ul>
+                        </div>
+                        <span id="login-status"></span>
+                        <form id="login" class="login-form">
+                            <input type="text" name="username" class="default-input" placeholder="Username" required>
+                            <input type="password" name="password" class="default-input" placeholder="Password" required>
+                            <input type="hidden" name="q" value="9821a550">
+                            <!-- <input type="hidden" name="t" value=""> -->
+                            <button data-theme="dark" class="h-captcha btn btn-success" data-callback="onSubmitlogin" data-sitekey="2c9fea50-9ec8-4067-8d5c-01e2f56d020b"><span>Login</span></button><script>function onSubmitlogin(){document.getElementById("login").submit();}</script>
+                            <button class="restore-link" data-dismiss="modal" data-toggle="modal" data-target="#restoreModal">Forgot password?</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade custom-modal" id="registrationModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Register</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="login-with-social">
+                            <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#loginModal">Log in via social network</button>
+                        </div>
+                        <span id="register-status"></span>
+                        <form id="register" class="login-form">
+                            <input type="text" name="username" class="default-input" placeholder="Username" required>
+                            <input type="email" name="email" class="default-input" placeholder="Email" required>
+                            <input type="password" name="password" class="default-input" placeholder="Password" required>
+                            <input type="password" name="repeat" class="default-input" placeholder="Repeat password" required>
+                            <input type="checkbox" id="terms-lb" required>
+                            <label for="terms-lb">Agree with the Terms of Service</label>
+                            <button data-theme="dark" class="h-captcha btn btn-success" data-callback="onSubmitregister" data-sitekey="2c9fea50-9ec8-4067-8d5c-01e2f56d020b"><span>Register</span></button><script>function onSubmitregister(){document.getElementById("register").submit();}</script>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade custom-modal" id="restoreModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Restore</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="restore-status"></span>
+                        <form id="restore" class="login-form">
+                            <input type="text" name="email" class="default-input" placeholder="E-mail or Username" required>
+                            <button data-theme="dark" class="h-captcha btn btn-primary" data-callback="onSubmitrestore" data-sitekey="2c9fea50-9ec8-4067-8d5c-01e2f56d020b"><span>Restore</span></button><script>function onSubmitrestore(){document.getElementById("restore").submit();}</script>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade custom-modal" id="tgModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sign in via Telegram</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <a id="tglink" href="tg://resolve?domain=LeakCheckBot" class="btn btn-primary"><i class="fab fa-telegram"></i> Auth</a><br><br>
+                            The desktop / mobile version of Telegram will open, you have to press START and follow the instructions.
+                            <hr>
+                            <h4>or</h4>
+                            <hr>
+                            send a command /start to our bot (@LeakCheckBot) manually
+                        </center>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .card {
+                background-color: rgba(255,255,255,.1);
+            }
+            .table {
+                color: #fff;
+            }
+            .faq-button {
+                color: #fff;
+            }
+            .faq-button:hover {
+                color: #b1b1b1;
+            }
+            .faq-answer {
+                margin-left: 14px;
+                margin-top: 14px;
+                margin-bottom: 14px;
+            }
+        </style>
+
+        <script src="js/iziModal.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.fancybox.min.js" crossorigin="anonymous"></script>
+        <script src="js/toastr.min.js"></script>
+        <script src="js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="js/crypto-js.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/notify.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/wow.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript">
+            $('.feedback-list').slick({
+             infinite: true,
+             dots:false,
+             arrows:false,
+             slidesToShow: 3,
+             slidesToScroll: 3,
+             autoplay: false,
+             autoplaySpeed: 2000,
+             responsive: [
+             {
+               breakpoint: 1200,
+               settings: {
+                 slidesToShow: 2,
+                 slidesToScroll: 2,
+               }
+             },
+             {
+               breakpoint: 768,
+               settings: {
+                 slidesToShow: 1,
+                 slidesToScroll: 1
+               }
+             },
+             {
+               breakpoint: 480,
+               settings: {
+                 slidesToShow: 1,
+                 slidesToScroll: 1
+               }
+             }
+             ]
+            });
+        </script>
+        <script>
+            $(".spoiler-trigger").click(function () {
+                $(this).parent().next().collapse("toggle");
+            });
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+                if(document.referrer.match("/auth/verify/")) 
+                    toastr.success('Your account has been activated successfully');
+                if(document.referrer.match("/auth/restore/")) 
+                    toastr.success('A message with a new password has been sent to your e-mail address.');
+            });
+            $("form[name='search']").submit(function(e) {
+                e.preventDefault();
+                var data = $("input[name='data']", this).val().toLowerCase();
+                $.ajax({
+                    type: "GET",
+                    url: "/api/public",
+                    data: {
+                        key: "49535f49545f5245414c4c595f4150495f4b4559",
+                        // check: (data.match(/^[A-Za-z0-9]{3,}$/)) ? data : CryptoJS.SHA256(data).toString(CryptoJS.enc.Hex).substring(0, 24)
+                        check: data
+                    },
+                    success: function(obj) {
+                        if (obj['success']) {
+                            $("#leaks-found").html(obj['sources'].length);
+                            $("#passwords-found").html(obj['passwords']);
+                            $('#search-table').DataTable({
+                                "destroy": true,
+                                "responsive": true,
+                                "autoWidth": false,
+                                "paging": true,
+                                "ordering": true,
+                                "searching": false,
+                                "data": obj['sources'],
+                                "columns": [{
+                                        "data": "name"
+                                    },
+                                    {
+                                        "data": "date"
+                                    }
+                                ]
+                            });
+                            $('#searchModal').modal('show');
+                            $("form[name='search']")[0].reset();
+                        } else {
+                            toastr.error("Unable to complete search. " + obj['error']);
+                        }
+                    },
+                    error: function() {
+                        toastr.error("Unable to complete search.");
+                    }
+                });
+            });
+            function resend() {
+                $.ajax({
+                    type: "POST",
+                    url: "/auth/resend",
+                    data: {
+                        login: $("input[name='username']").val()
+                    },
+                    complete: function(e) {
+                        data = e.responseJSON;
+                        alert(data['description']);
+                    }
+                });
+            }
+        </script>
+    
+</body></html>
